@@ -1,0 +1,100 @@
+/* General Reset and Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+/* --- Skip to Main Content Link --- */
+.skip-link {
+    position: absolute;
+    top: -100px; /* Hide off-screen */
+    left: 0;
+    background: #333;
+    color: white;
+    padding: 10px;
+    z-index: 100;
+    text-decoration: none;
+}
+
+.skip-link:focus {
+    top: 0; /* Visible only on focus */
+    outline: 2px solid #ff9900;
+}
+
+/* --- Navigation (Flexbox + Attractive Styling) --- */
+nav {
+    background: #222;
+    padding: 1rem;
+    display: flex; /* Flex Requirement */
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Style 1 */
+}
+
+nav ul {
+    list-style: none; /* Style 2 */
+    display: flex;
+    gap: 30px; /* Style 3 */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ff9900; /* Hover Requirement 1 */
+}
+
+/* --- Image Styling (Box Model Requirement) --- */
+img {
+    border: 5px solid #fff; /* Box Model: Border */
+    padding: 10px;          /* Box Model: Padding */
+    border-radius: 15px;    /* Box Model: Radius */
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.4s ease, filter 0.4s ease; /* Transition preparation */
+}
+
+/* Image Hover Effect (Interesting Transition) */
+img:hover {
+    transform: scale(1.05) rotate(1deg); /* Hover Requirement 2 */
+    filter: brightness(1.1);
+    cursor: pointer;
+}
+
+/* --- Grid Layout (At least 2 columns) --- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* --- nth-child Selector --- */
+/* Every second image gets a different border color and radius */
+.gallery-grid img:nth-child(even) {
+    border-color: #ff9900;
+    border-radius: 50px 5px 50px 5px;
+}
+
+/* Containers */
+main {
+    padding: 2rem;
+    max-width: 1100px;
+    margin: auto;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: #777;
+}
