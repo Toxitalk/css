@@ -1,0 +1,107 @@
+/* --- Base Styles & Mobile-First Approach --- */
+body {
+    background-color: #dedede;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 32px;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+}
+
+p {
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* --- Mobile Grid (Default) --- */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr; /* One column grid */
+    gap: 10px;                 /* 10px gap between rows and columns */
+}
+
+figure {
+    margin: 0;
+    padding: 10px;
+    background-color: #fff;
+    border: 2px solid transparent;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+figcaption {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    padding-top: 5px;
+}
+
+footer {
+    text-align: center;
+    padding: 40px 0;
+}
+
+/* --- Tablet View (min-width: 772px) --- */
+@media screen and (min-width: 772px) {
+    .grid {
+        grid-template-columns: 1fr 1fr; /* Two column grid */
+    }
+
+    figure {
+        border-radius: 50%; /* Circular shape */
+        overflow: hidden;   /* Ensures image stays within circle */
+        aspect-ratio: 1 / 1; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    figure:last-child {
+        grid-column: span 2; /* Last figure takes up both columns */
+    }
+}
+
+/* --- Large Screen View (min-width: 992px) --- */
+@media screen and (min-width: 992px) {
+    .grid {
+        grid-template-columns: 1fr 1fr 1fr; /* Expanded to 3 columns for desktop */
+    }
+
+    figure {
+        border-radius: 0; /* Remove border radius from all figures */
+    }
+
+    figure:nth-child(3n) {
+        grid-column: span 2; /* Every third figure takes up two columns */
+    }
+}
+
+/* --- Prefers Reduced Motion --- */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto; /* Remove smooth scroll behavior */
+    }
+}
+
+/* --- Dark Mode Color Scheme --- */
+@media (prefers-color-scheme: dark) {
+    figure {
+        background-color: #222;  /* Dark background */
+        color: #ffffcc;          /* Lighter yellowish font color */
+        border-color: #000;      /* Black border */
+    }
+}
