@@ -1,0 +1,29 @@
+body{
+  font-family: verdana;
+  font-size: 16px;
+}
+header{
+  background-color:#dddddd;
+}
+nav{
+  background-color:#eeeeee;
+}
+main{
+  background-color:#cccccc;
+  font-size: 20px;
+}
+footer{
+  background-color:#dddddd;
+}
+li{
+  display:inline-block;
+  width:25%;
+}
+h1{
+  text-align: right;
+  font-family: arial;
+  color: #ff0000;
+}
+p{
+  line-height:2;
+}
